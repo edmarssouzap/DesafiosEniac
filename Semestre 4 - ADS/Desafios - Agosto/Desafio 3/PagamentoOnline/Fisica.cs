@@ -11,7 +11,7 @@ namespace PagamentoOnline
             this.Cpf = Cpf;
         }
 
-        protected override Boolean validar(string documento)
+        public override Boolean validar(string documento)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -24,7 +24,7 @@ namespace PagamentoOnline
             documento = documento.Replace(".", "").Replace("-", "");
 
             if (documento.Length != 11) return false;
-            tempCpf = Cpf.Substring(0, 9);
+            tempCpf = documento.Substring(0, 9);
 
             soma = 0;
             for (int i = 0; i < 9; i++) soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];

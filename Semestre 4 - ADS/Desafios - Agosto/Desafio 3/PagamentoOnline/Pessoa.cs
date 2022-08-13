@@ -13,9 +13,9 @@ namespace PagamentoOnline
 
         public void escreverNome()
         {
-            Console.WriteLine("Seu nome é " + Nome);
+            Console.WriteLine("Seu nome/Razao Social é " + Nome);
         }
 
-        abstract protected Boolean validar(string documento);
+        abstract public Boolean validar(string documento);
     }
 }

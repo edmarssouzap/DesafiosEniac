@@ -6,15 +6,17 @@ namespace PagamentoOnline
     {
         static void Main(string[] args)
         {
-            Fisica pf = new Fisica("111.111.111-12");
+            Fisica pf = new Fisica("502.817.490-35");
             pf.Nome = "Edmar";
-            pf.validar(pf.Cpf);
             pf.escreverNome();
+            Console.WriteLine("Cpf é valido: " + pf.validar(pf.Cpf));
 
-            Juridica jd = new Juridica("111.111.122-22");
+            Console.WriteLine("\n");
+
+            Juridica jd = new Juridica("68.202.967/0001-90");
             jd.Nome = "Ed Software LTDA.";
-            jd.validar(jd.Cnpj);
             jd.escreverNome();
+            Console.WriteLine("Cnpj é valido: " + jd.validar(jd.Cnpj));
 
             Console.ReadKey();
         }
